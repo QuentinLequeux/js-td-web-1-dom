@@ -2,6 +2,7 @@
 /*
 SOURCE : https://github.com/oc-courses/javascript-web
 */
+
 /*
  DOM - PREPA 3 : « Instruments » : attributs et classes
 - Créez une fonction getInfosLiens qui doit afficher :
@@ -20,8 +21,36 @@ SOURCE : https://github.com/oc-courses/javascript-web
     - si l'élément d'id "contrebasse" possède la classe "cordes" (doit afficher "Aucun élément ne possède l'id contrebasse")
 */
 
+function getInfosLiens() {
+    const liens = document.body.querySelectorAll("a");
+    console.log(liens.length);
+    console.log(liens[0]);
+    console.log(liens[4]);
+}
 
+const liste1 = document.body.querySelector("ul");
+const harpe = document.createElement("li");
+harpe.textContent = "La ";
+liste1.appendChild(harpe);
+harpe.id = "harpe";
+const liste2 = document.body.querySelector("#harpe")
+const lien = document.createElement("a");
+lien.textContent = "harpe";
+liste2.appendChild(lien);
+lien.setAttribute("href", "https://fr.wikipedia.org/wiki/Harpe");
 
+getInfosLiens();
 
+function possede(id, classe) {
+    const element = document.getElementById(id);
+    if (element && element.classList.contains(classe)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-
+console.log(possede("saxophone", "bois"));
+console.log(possede("saxophone", "cuivre"));
+console.log(possede("trompette", "cuivre"));
+console.log(possede("contrebasse", "cordes"));

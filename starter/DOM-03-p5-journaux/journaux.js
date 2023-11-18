@@ -15,3 +15,33 @@ Il a sans doute été simplifié à outrance dans un souci
 de rendre la génération la plus simple possible en JS.
 TODO : améliorer le balisage HTML généré !!! */
 
+const journaux = ["http://lemonde.fr",
+    "http://lefigaro.fr",
+    "http://liberation.fr"];
+
+const divContenu = document.getElementById('contenu');
+
+/*
+
+const li1 = document.createElement("li");
+li1.setAttribute("id", "monde");
+divContenu.appendChild(li1);
+
+const liContenu = document.body.querySelector("#monde");
+const anchor = document.createElement("a");
+anchor.textContent = "Le monde";
+anchor.setAttribute("href", journaux[0]);
+liContenu.appendChild(anchor);
+
+*/
+journaux.forEach(function(url){
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.textContent = url;
+    //anchor.setAttribute(url, url);
+
+    const li1 = document.createElement("li");
+    li1.appendChild(anchor);
+
+    divContenu.appendChild(li1);
+});

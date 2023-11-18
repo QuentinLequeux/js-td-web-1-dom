@@ -14,9 +14,14 @@ AIDES :
 
 // Insérez votre code ici
 
-
-
-
+function afficherEnfant(noeud, indice) {
+    const enfant = noeud.children;
+    if (indice >= 0 && indice < enfant.length){
+        console.log(enfant[indice]);
+    } else {
+        console.log("Invalide");
+    }
+}
 
 // Doit afficher le noeud h1
 afficherEnfant(document.body, 1);
